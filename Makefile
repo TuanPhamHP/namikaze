@@ -1,4 +1,4 @@
-DOCKER_RUN = docker compose exec app
+DOCKER_RUN = docker compose exec --user 1000:1000 app
 PHP_RUN = $(DOCKER_RUN) php
 NPM_RUN = npm
 YARN_RUN = yarn
@@ -120,6 +120,9 @@ middleware:
 migration:
 	$(PHP_RUN) artisan make:migration ${name}
 
+migrate-fresh:
+	$(PHP_RUN) artisan migrate:fresh --seed
+
 policy:
 	$(PHP_RUN) artisan make:policy ${name}
 
@@ -148,3 +151,14 @@ queue-restart:
 
 broadcast:
 	$(PHP_RUN) artisan socket:run
+
+
+
+blueprint-new:
+	$(PHP_RUN) artisan blueprint:new
+
+blueprint:
+	$(PHP_RUN) artisan blueprint:build
+
+blueprint-stubs:
+	$(PHP_RUN) artisan blueprint:stubs
