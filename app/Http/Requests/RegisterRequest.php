@@ -2,10 +2,8 @@
 
 namespace App\Http\Requests;
 
-class StoreBrandRequest extends ApiRequest
+class RegisterRequest extends ApiRequest
 {
-
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -24,9 +22,9 @@ class StoreBrandRequest extends ApiRequest
     public function rules()
     {
         return [
-            //
             'name' => 'required',
-            'description' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
         ];
     }
 
@@ -34,9 +32,12 @@ class StoreBrandRequest extends ApiRequest
     {
         return [
             'name.required' => 'Name is required',
-            'description.required' => 'Description is required',
+            'email.required' => 'Email is required',
+            'email.email' => 'Email is invalid',
+            'email.unique' => 'Email is used',
+            'password.required' => 'Password is used',
+            'password.min' => 'Password min-length is 6',
+            'password.confirmed' => 'Password is not confirmed',
         ];
     }
-
-
 }

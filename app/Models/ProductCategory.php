@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  * @package App\Models
  *
  * @property int $id
- * @property string $name
- * @property string $description
- * @property string $image
+ * @property string name
+ * @property string description
+ * @property string image
  */
 class ProductCategory extends Model
 {

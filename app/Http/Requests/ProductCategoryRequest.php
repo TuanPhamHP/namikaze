@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
-class StoreBrandRequest extends ApiRequest
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
+
+class ProductCategoryRequest extends ApiRequest
 {
-
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -13,7 +14,7 @@ class StoreBrandRequest extends ApiRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -37,6 +38,5 @@ class StoreBrandRequest extends ApiRequest
             'description.required' => 'Description is required',
         ];
     }
-
 
 }

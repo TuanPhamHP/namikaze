@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBrandRequest;
 use App\Models\Brand;
+use App\Transformers\BrandTransformer;
 use Illuminate\Http\Request;
 
 class BrandController extends BaseApiController
@@ -31,6 +32,23 @@ class BrandController extends BaseApiController
         return $this->respond(true, $data, 200, 0, 'Brand list');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function detail($id): \Illuminate\Http\JsonResponse
+    {
+        $brand = $this->brand->find($id);
+        if (!$brand) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Brand not found',
+            ], 404);
+        }
+        $transformer = new BrandTransformer();
+        $data = $this->transform($brand, $transformer, 'brand', $transformer->detailIncludes);
+        return $this->respondSuccess($data);
+    }
 
     /**
      * @param StoreBrandRequest $request
@@ -47,20 +65,5 @@ class BrandController extends BaseApiController
         ]);
     }
 
-    /**
-     * @param string $id
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function detail(string $id)
-    {
-        $data = $this->brand->find($id);
-        if (!$data) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'Brand not found',
-            ], 404);
-        }
-        return $this->respond(true, $data, 200, 0, 'Brand detail');
-    }
 
 }

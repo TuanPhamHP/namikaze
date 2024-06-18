@@ -152,6 +152,14 @@ queue-restart:
 broadcast:
 	$(PHP_RUN) artisan socket:run
 
+transformer:
+	$(PHP_RUN) artisan make:transformer ${name}
+
+vendor-jwt:
+	$(PHP_RUN) artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+jwt-secret:
+	$(PHP_RUN) artisan jwt:secret
 
 
 blueprint-new:

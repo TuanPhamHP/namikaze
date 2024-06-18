@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
-class StoreBrandRequest extends ApiRequest
-{
+use Illuminate\Foundation\Http\FormRequest;
 
+class ApiRequest extends FormRequest
+{
+    use ApiRequestTrait;
 
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +15,7 @@ class StoreBrandRequest extends ApiRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -25,18 +27,6 @@ class StoreBrandRequest extends ApiRequest
     {
         return [
             //
-            'name' => 'required',
-            'description' => 'required',
         ];
     }
-
-    public function messages()
-    {
-        return [
-            'name.required' => 'Name is required',
-            'description.required' => 'Description is required',
-        ];
-    }
-
-
 }
