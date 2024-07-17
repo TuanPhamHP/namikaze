@@ -17,12 +17,15 @@ class ProductStatusSeeder extends Seeder
         //
         $data = [
             [
+                "id" => 1,
                 "name" => "Đang bán",
             ],
             [
+                "id" => 2,
                 "name" => "Đang nhập",
             ],
             [
+                "id" => 3,
                 "name" => "Ngừng bán",
             ]
         ];

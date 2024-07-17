@@ -23,6 +23,42 @@ class BrandSeeder extends Seeder
                 "is_active" => 1,
                 "created_by" => null,
                 "updated_by" => null
+            ],
+            [
+                'name' => 'Ashley Furniture',
+                'slug' => ['ashley-furniture', 'ashley', 'ashley-home'],
+                'description' => 'Ashley Furniture Industries là một trong những nhà sản xuất và bán lẻ đồ nội thất lớn nhất ở Mỹ, nổi tiếng với các sản phẩm chất lượng và giá cả phải chăng.',
+                'image' => 'https://www.ashleyfurniture.com/on/demandware.static/-/Sites-afw-catalog/default/dw7d8a25b7/images/products/AS0016-Radilyn-2-piece-Table-Set.jpg',
+                'is_active' => 1,
+                'created_by' => null,
+                'updated_by' => null
+            ],
+            [
+                'name' => 'Williams-Sonoma',
+                'slug' => ['williams-sonoma', 'williams-sonoma-home', 'ws-home'],
+                'description' => 'Williams-Sonoma, Inc. là một công ty bán lẻ đồ nội thất và đồ dùng nhà bếp hàng đầu của Mỹ, với các thương hiệu như Pottery Barn và West Elm.',
+                'image' => 'https://media.williams-sonoma.com/pi/4e/4e/4e4e8c9d26b84940f4f5f0b44abf0376.jpg',
+                'is_active' => 1,
+                'created_by' => null,
+                'updated_by' => null
+            ],
+            [
+                'name' => 'La-Z-Boy',
+                'slug' => ['la-z-boy', 'lazy-boy', 'la-z-boy-furniture'],
+                'description' => 'La-Z-Boy Incorporated là một công ty của Mỹ chuyên sản xuất đồ nội thất gia đình, nổi tiếng nhất với ghế tựa thư giãn và sofa.',
+                'image' => 'https://la-z-boy.scene7.com/is/image/LaZBoy/5DWE65-809_D141953_005?$PDP_FAMILY_&wid=650&hei=650',
+                'is_active' => 1,
+                'created_by' => null,
+                'updated_by' => null
+            ],
+            [
+                'name' => 'Herman Miller',
+                'slug' => ['herman-miller', 'herman-miller-furniture', 'hm-furniture'],
+                'description' => 'Herman Miller, Inc. là một công ty thiết kế và sản xuất đồ nội thất văn phòng, thiết bị y tế, và các sản phẩm liên quan nổi tiếng với thiết kế hiện đại.',
+                'image' => 'https://millerknoll.scene7.com/is/image/HermanMillerStore/DXR__20211217161232__main?$hi-res$',
+                'is_active' => 1,
+                'created_by' => null,
+                'updated_by' => null
             ]
         ];
 

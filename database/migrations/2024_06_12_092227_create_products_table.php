@@ -29,7 +29,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->foreignId('category_id')->constrained('product_categories');
             $table->foreignId('brand_id')->constrained('brands');
-            $table->unsignedBigInteger('status_id')->default(1)->change();
+            $table->integer('status_id')->default(1);
             $table->timestamps();
         });
     }

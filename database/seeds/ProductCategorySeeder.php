@@ -17,20 +17,21 @@ class ProductCategorySeeder extends Seeder
         //
         $data = [
             [
-                "name" => "Bàn ăn",
-                "description" => "Bàn ăn",
-                "image" => "https://baron.vn/wp-content/uploads/2018/12/ban-an-grace-11.jpg",
+                "name" => "Sofa",
+                "description" => " Tất cả sản phẩm đều có chất lượng quốc tế, thương hiệu lớn.",
+                "image" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD8JRQoc2a2hiyAwg6aIlxB4Hl8nO9Olvc0A&s",
+            ],
+            [
+                "name" => "Bàn làm việc",
+                "description" => "Bàn làm việc -  Tất cả sản phẩm đều có chất lượng quốc tế, thương hiệu lớn.",
+                "image" => "https://xuongdeco.com/wp-content/uploads/2021/07/ban-lam-viec-deco-dlvr31.jpg",
             ],
             [
                 "name" => "Giường ngủ",
                 "description" => "Giường ngủ",
                 "image" => "https://noithatzito.vn/wp-content/uploads/2022/04/giuong-ngu-go-oc-cho-za-802-2.jpg",
             ],
-            [
-                "name" => "Tủ quần áo",
-                "description" => "Tủ quần áo",
-                "image" => "https://dogolegia.vn/wp-content/uploads/2023/05/thiet-ke-mau-tu-quan-ao-dep-hien-dai-am-tuong-LG-TQA241.jpg",
-            ]
+
         ];
 
         foreach ($data as $item) {
