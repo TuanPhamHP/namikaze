@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BrandController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductCategoryController;
 use App\Http\Controllers\Api\ProductController;
 use Illuminate\Http\Request;
@@ -47,8 +48,14 @@ Route::group(['prefix' => 'products'], function () {
     Route::post('/store', [ProductController::class, 'store']);
 });
 
-Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+Route::group(['prefix' => 'orders'], function () {
+
+    Route::get('/', [OrderController::class, 'index']);
+    Route::post('/store', [OrderController::class, 'store']);
 });
+
+// Route::group(['middleware' => 'auth:api'], function () {
+//     Route::get('/user', function (Request $request) {
+//         return $request->user();
+//     });
+// });
